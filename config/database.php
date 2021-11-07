@@ -51,7 +51,8 @@ return [
             'database' => env('DB_DATABASE', 'equipment'),
             'username' => env('DB_USERNAME', 'user'),
             'password' => env('DB_PASSWORD', 'password123'),
-            'unix_socket' =>'/Applications/MAMP/tmp/mysql/mysql.sock',
+            // 'unix_socket' =>'/Applications/MAMP/tmp/mysql/mysql.sock',
+            'unix_socket' => env('DB_SOCKET', ''),//heroku用に追加
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
