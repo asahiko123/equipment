@@ -49,8 +49,8 @@ return [
             'host' => env('DB_HOST', 'localhost'),
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'equipment'),
-            'username' => env('DB_USERNAME', 'user'),
-            'password' => env('DB_PASSWORD', 'password123'),
+            'username' => env('DB_USERNAME', 'root'),
+            'password' => env('DB_PASSWORD', 'root'),
             // 'unix_socket' =>'/Applications/MAMP/tmp/mysql/mysql.sock',
             'unix_socket' => env('DB_SOCKET', ''),//heroku用に追加
             'charset' => 'utf8mb4',
