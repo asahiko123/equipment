@@ -21,6 +21,7 @@ class EquipmentController extends Controller
      
         $equipments =DB::table('equipment_forms')
         ->select('id','name','borrowed','checkout','returned','confirmed','description')
+        ->orderBy('id','desc')
         ->paginate(10);
 
 
