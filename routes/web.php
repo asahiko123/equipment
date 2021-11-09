@@ -28,7 +28,7 @@ Route::group(['prefix'=>'equipment','middleware'=>['auth','can:user-higher']],fu
 Route::group(['prefix'=>'equipment','middleware'=>['auth','can:admin-higher']],function(){
     Route::post('index','EquipmentController@index')->name('equipment.index');
     Route::get('edit/{id}','EquipmentController@edit')->name('equipment.edit');
-    Route::post('update/{id}','EquipmentController@update')->name('equipmnet.update');
+    Route::post('update/{id}','EquipmentController@update')->name('equipment.update');
     Route::post('destroy/{id}','EquipmentController@destroy')->name('equipment.destroy');
 });
 //開発者以上

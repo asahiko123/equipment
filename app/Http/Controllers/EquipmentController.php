@@ -115,7 +115,6 @@ class EquipmentController extends Controller
         // $equipment->checkout = $request->input('checkout');
         // $equipment->returned = $request->input('returned');
         // $equipment->description=$request->input('description');
-
         $equipment->confirmed= $request->input('confirmed');
 
         $equipment->save();
