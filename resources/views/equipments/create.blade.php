@@ -19,11 +19,11 @@
                     <div class="d-grid gap-3 col-lg-5 py-2">
                     <div class="col-md-12">
                     <label>氏名</label>
-                    <input type="text" class="form-control col-md-6"name="name">
+                    <input type="text" class="form-control col-md-6"name="name"required>
                     </div>
                     <div class="col-md-12">
                     <label>貸出物</label>
-                    <select class="form-select form-control mb-3" name="borrowed" >
+                    <select class="form-select form-control mb-3" name="borrowed" required>
                         <option selected>選択してください</option>
                         <option value="1">1号機+アダプタ+バッテリー</option>
                         <option value="2">2号機+アダプタ+バッテリー</option>
@@ -38,16 +38,16 @@
                     </div>
                     <div class="col-md-12">
                         <label>貸出日</label>
-                        <input type="date" class="form-control mb-3" name="checkout">
+                        <input type="date" class="form-control mb-3" name="checkout"required>
                     </div>
                     <div class="col-md-12">
                         <label>返却日</label>
-                        <input type="date" class="form-control mb-3"name="returned">
+                        <input type="date" class="form-control mb-3"name="returned"required>
                     </div>
                     
                     <div class="col-md-12">
                     <label>備考</label>
-                    <textarea name="description" class="form-control col-md-12 mb-3"></textarea>
+                    <textarea name="description" class="form-control col-md-12 mb-3"required></textarea>
                     </div>
                     <div class="col-md-12">
                     <label>状態</label>

@@ -34,8 +34,6 @@
                         </thead>
                         <tbody>
                         @foreach($equipments as $equipment)    
-                        <form method="POST" action="{{route('equipment.destroy',['id'=> $equipment->id])}}">
-                        @csrf
                         <tr>
                         <th>{{$equipment->id}}</th>
                         <td>{{$equipment->name}}</td>                   
@@ -44,10 +42,16 @@
                         <td>{{$equipment->returned}}</td>                 
                         <td><span class="badge badge-success">{{$confirmarr[$loop->iteration -1]}}</span></td>
                         <td>{{$equipment->description}}</td>
+                        @can('admin-higher')
                         <td><a href="{{ route('equipment.edit',['id'=> $equipment->id])}}">編集</a></td>
-                        <td><button type="submit"class="btn btn-danger">削除する</button></td>
+                        <td>
+                            <form method="POST" action="{{route('equipment.destroy',['id'=> $equipment->id])}}">
+                            @csrf
+                                <button type="submit"class="btn btn-danger">削除する</button>
+                            </form>
+                        </td>
+                        @endcan
                         @endforeach
-                        </form>
                         </tbody>
                         </table>
                     {{$equipments->links()}}
