@@ -20,7 +20,7 @@ class EquipmentController extends Controller
         // dd($equipments);
      
         $equipments =DB::table('equipment_forms')
-        ->select('id','name','borrowed','checkout','returned','confirmed','description')
+        ->select('id','name','borrowed','checkout','returned','confirmed','description','accepted')
         ->orderBy('id','desc')
         ->paginate(10);
 
@@ -115,7 +115,7 @@ class EquipmentController extends Controller
         // $equipment->checkout = $request->input('checkout');
         // $equipment->returned = $request->input('returned');
         // $equipment->description=$request->input('description');
-        $equipment->confirmed= $request->input('confirmed');
+        $equipment->confirmed= $request->input('confirmed');   
 
         $equipment->save();
 
@@ -133,6 +133,17 @@ class EquipmentController extends Controller
         $equipment =EquipmentForm::find($id);
         $equipment->delete();
 
+        return redirect('equipment/index');
+    }
+
+    public function accept(Request $request,$id){
+
+        //     $equipment =EquipmentForm::find($id);
+        //     $equipment->accepted =($equipment->accepted ==0)? 1:1;
+            
+        //     $equipment->save();
+
+        // return view('equipments.index',compact('equipment'));
         return redirect('equipment/index');
     }
 }

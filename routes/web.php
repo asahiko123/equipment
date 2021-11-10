@@ -30,6 +30,7 @@ Route::group(['prefix'=>'equipment','middleware'=>['auth','can:admin-higher']],f
     Route::get('edit/{id}','EquipmentController@edit')->name('equipment.edit');
     Route::post('update/{id}','EquipmentController@update')->name('equipment.update');
     Route::post('destroy/{id}','EquipmentController@destroy')->name('equipment.destroy');
+    Route::post('accept/{id}','EquipmentController@accept')->name('equipment.accept');
 });
 //開発者以上
 Route::group(['prefix'=>'equipment','middleware'=>['auth','can:system-only']],function(){

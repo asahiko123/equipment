@@ -28,7 +28,7 @@
                             <th scope="col">返却日</th>
                             <th scope="col">状態</th>
                             <th scope="col">備考</th>
-                            <th scope="col"></th>
+                            <th scope="col">承認状態</th>
                             <th scope="col"></th>
                             </tr>
                         </thead>
@@ -42,12 +42,19 @@
                         <td>{{$equipment->returned}}</td>                 
                         <td><span class="badge badge-success">{{$confirmarr[$loop->iteration -1]}}</span></td>
                         <td>{{$equipment->description}}</td>
+                        <td>{{$equipment->accepted}}</td>
                         @can('admin-higher')
                         <td><a href="{{ route('equipment.edit',['id'=> $equipment->id])}}">編集</a></td>
                         <td>
                             <form method="POST" action="{{route('equipment.destroy',['id'=> $equipment->id])}}">
                             @csrf
                                 <button type="submit"class="btn btn-danger">削除する</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form method="POST" action="{{route('equipment.accept',['id'=>$equipment->id])}}">
+                                @csrf
+                                <button type="submit"class="btn btn-success" name="accepted"value="1">承認する</button>
                             </form>
                         </td>
                         @endcan
