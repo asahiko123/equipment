@@ -19,6 +19,26 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
+<script>
+    function check(){
+        var result =window.confirm('本当に削除しますか?');
+        if(result){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    function authcheck(){
+        var result =window.confirm('変更しますか？');
+        
+        if(result){
+            return true;
+        }else{
+            return false;
+        }
+    }
+</script>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">

@@ -32,6 +32,13 @@ Route::group(['prefix'=>'equipment','middleware'=>['auth','can:admin-higher']],f
     Route::post('destroy/{id}','EquipmentController@destroy')->name('equipment.destroy');
     Route::post('accept/{id}','EquipmentController@accept')->name('equipment.accept');
 });
+
+Route::group(['prefix'=>'authorizer','middleware'=>['auth','can:admin-higher']],function(){
+    Route::match(['get','post'],'index','AuthorizerController@index')->name('authorizer.index');
+    Route::post('create','AuthorizerController@create')->name('authorizer.create');
+    Route::post('store','AuthorizerController@store')->name('authorizer.store');
+    Route::post('destroy/{id}','AuthorizerController@destroy')->name('authorizer.destroy');
+});
 //開発者以上
 Route::group(['prefix'=>'equipment','middleware'=>['auth','can:system-only']],function(){
    

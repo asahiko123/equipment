@@ -47,7 +47,7 @@
                     
                     <div class="col-md-12">
                     <label>備考</label>
-                    <textarea name="description" class="form-control col-md-12 mb-3"required></textarea>
+                    <textarea name="description" class="form-control col-md-12 mb-3"></textarea>
                     </div>
                     <div class="col-md-12">
                     <label>状態</label>

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
@@ -30,6 +31,8 @@
                             <th scope="col">備考</th>
                             <th scope="col">承認状態</th>
                             <th scope="col"></th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -44,23 +47,27 @@
                         <td>{{$equipment->description}}</td>
                         <td>
                         @if($equipment->accepted===1)
-                            <span style="color:green">承認済み</span>
+                            <span style="color:green">承認済</span>
                         @else
                             <span style="color:red">未承認</span>                     
                         @endif
                         </td>
                         @can('admin-higher')
-                        <td><a href="{{ route('equipment.edit',['id'=> $equipment->id])}}">編集</a></td>
+                        <td><button class="btn btn-primary" onclick="location.href='{{ route('equipment.edit',['id'=> $equipment->id])}}'">編集</button></td>
                         <td>
-                            <form method="POST" action="{{route('equipment.destroy',['id'=> $equipment->id])}}">
+                            <form method="POST" action="{{route('equipment.destroy',['id'=> $equipment->id])}}" onsubmit="return check()">
                             @csrf
-                                <button type="submit"class="btn btn-danger">削除する</button>
+                                <button type="submit"class="btn btn-danger">削除</button>
                             </form>
                         </td>
                         <td>
-                            <form method="POST" action="{{route('equipment.accept',['id'=>$equipment->id])}}">
+                            <form method="POST" action="{{route('equipment.accept',['id'=>$equipment->id])}}" onsubmit="return authcheck()">
                                 @csrf
-                                <button type="submit"class="btn btn-success" name="accepted" value="1">承認する</button>
+                                @if($equipment->accepted===0)
+                                <button type="submit"class="btn btn-success" name="accepted" value="1">承認</button>
+                                @else
+                                <button type="submit"class="btn btn-warning" name="accepted" value="0">承認取消</button>
+                                @endif
                             </form>
                         </td>
                         @endcan
