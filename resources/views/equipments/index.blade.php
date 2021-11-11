@@ -42,7 +42,13 @@
                         <td>{{$equipment->returned}}</td>                 
                         <td><span class="badge badge-success">{{$confirmarr[$loop->iteration -1]}}</span></td>
                         <td>{{$equipment->description}}</td>
-                        <td>{{$equipment->accepted}}</td>
+                        <td>
+                        @if($equipment->accepted===1)
+                            <span style="color:green">承認済み</span>
+                        @else
+                            <span style="color:red">未承認</span>                     
+                        @endif
+                        </td>
                         @can('admin-higher')
                         <td><a href="{{ route('equipment.edit',['id'=> $equipment->id])}}">編集</a></td>
                         <td>
@@ -54,7 +60,7 @@
                         <td>
                             <form method="POST" action="{{route('equipment.accept',['id'=>$equipment->id])}}">
                                 @csrf
-                                <button type="submit"class="btn btn-success" name="accepted"value="1">承認する</button>
+                                <button type="submit"class="btn btn-success" name="accepted" value="1">承認する</button>
                             </form>
                         </td>
                         @endcan

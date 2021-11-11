@@ -37,14 +37,3 @@ Route::group(['prefix'=>'equipment','middleware'=>['auth','can:system-only']],fu
    
 });
 
-
-// Route::group(['prefix'=>'equipment','middleware'=>'auth'],function(){
-//     Route::match(['get','post'],'index','EquipmentController@index')->name('equipment.index');
-//     Route::get('create','EquipmentController@create')->name('equipment.create');
-//     Route::post('store','EquipmentController@store')->name('equipment.store');
-//     Route::get('edit/{id}','EquipmentController@edit')->name('equipment.edit');
-//     Route::post('update/{id}','EquipmentController@update')->name('equipment.update');
-//     Route::post('destroy/{id}','EquipmentController@destroy')->name('equipment.destroy');
-// });
-
-// Route::resource('equipments','EquipmentController');

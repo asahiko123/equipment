@@ -138,12 +138,11 @@ class EquipmentController extends Controller
 
     public function accept(Request $request,$id){
 
-        //     $equipment =EquipmentForm::find($id);
-        //     $equipment->accepted =($equipment->accepted ==0)? 1:1;
+            $equipment =EquipmentForm::find($id);
+            $equipment->accepted =$request->accepted;
             
-        //     $equipment->save();
+            $equipment->save();
 
-        // return view('equipments.index',compact('equipment'));
         return redirect('equipment/index');
     }
 }
