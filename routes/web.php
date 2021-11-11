@@ -31,6 +31,7 @@ Route::group(['prefix'=>'equipment','middleware'=>['auth','can:admin-higher']],f
     Route::post('update/{id}','EquipmentController@update')->name('equipment.update');
     Route::post('destroy/{id}','EquipmentController@destroy')->name('equipment.destroy');
     Route::post('accept/{id}','EquipmentController@accept')->name('equipment.accept');
+    Route::post('select/{id}','EquipmentController@select')->name('equipment.select');
 });
 
 Route::group(['prefix'=>'authorizer','middleware'=>['auth','can:admin-higher']],function(){

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\EquipmentForm;
+use App\Models\AuthorizerForm;
 use Illuminate\Support\Facades\DB;
 use App\Services\CheckFormData;
 
@@ -20,7 +21,8 @@ class EquipmentController extends Controller
         // dd($equipments);
      
         $equipments =DB::table('equipment_forms')
-        ->select('id','name','borrowed','checkout','returned','confirmed','description','accepted')
+        ->select('equipment_forms.id','equipment_forms.name as equipment_name','borrowed','checkout','returned','confirmed','description','accepted','authorizer_id','authorizers.name as authorizer_name')
+        ->leftjoin('authorizers','equipment_forms.authorizer_id','=','authorizers.id')
         ->orderBy('id','desc')
         ->paginate(10);
 
@@ -68,6 +70,7 @@ class EquipmentController extends Controller
         $equipment->returned = $request->input('returned');
         $equipment->confirmed= $request->input('confirmed');
         $equipment->description=$request->input('description');
+        
 
         $equipment->save();
 
@@ -142,6 +145,19 @@ class EquipmentController extends Controller
             $equipment->accepted =$request->accepted;
             
             $equipment->save();
+
+            $authorizer =AuthorizerForm::all();
+
+        return view('equipments.select',compact('authorizer','equipment'));
+    }
+
+    public function select(Request $request,$id){
+
+        $equipment =EquipmentForm::find($id);
+        $equipment->authorizer_id =$request->authorizer_id;
+
+
+        $equipment->save();
 
         return redirect('equipment/index');
     }

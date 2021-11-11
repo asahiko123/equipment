@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAuthorizersTable extends Migration
+class AddAuthorizerIdEquipmentFormsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class CreateAuthorizersTable extends Migration
      */
     public function up()
     {
-        Schema::create('authorizers', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('name');
-            $table->timestamps();
+        Schema::table('equipment_forms', function (Blueprint $table) {
+            $table->tinyInteger('authorizer_id')->default(0)->after('description');
         });
     }
 
@@ -27,6 +25,6 @@ class CreateAuthorizersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('authorizers');
+        //
     }
 }

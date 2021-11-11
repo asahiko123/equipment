@@ -25,15 +25,20 @@
                     <label>貸出物</label>
                     <select class="form-select form-control mb-3" name="borrowed" required>
                         <option selected>選択してください</option>
-                        <option value="1">1号機+アダプタ+バッテリー</option>
-                        <option value="2">2号機+アダプタ+バッテリー</option>
-                        <option value="3">3号機+アダプタ+バッテリー</option>
-                        <option value="4">4号機+アダプタ+バッテリー</option>
-                        <option value="5">5号機+アダプタ+バッテリー</option>
-                        <option value="6">6号機+アダプタ+バッテリー</option>
-                        <option value="7">7号機+アダプタ+バッテリー</option>
-                        <option value="8">8号機+アダプタ+バッテリー</option>
-                        <option value="9">9号機+アダプタ+バッテリー</option>
+                        <optgroup label ="パソコン">
+                            <option value="1">1号機+アダプタ+バッテリー</option>
+                            <option value="2">2号機+アダプタ+バッテリー</option>
+                            <option value="3">3号機+アダプタ+バッテリー</option>
+                            <option value="4">4号機+アダプタ+バッテリー</option>
+                            <option value="5">5号機+アダプタ+バッテリー</option>
+                            <option value="6">6号機+アダプタ+バッテリー</option>
+                            <option value="7">7号機+アダプタ+バッテリー</option>
+                            <option value="8">8号機+アダプタ+バッテリー</option>
+                            <option value="9">9号機+アダプタ+バッテリー</option>
+                        </optgroup>
+                        <optgroup label="書籍">
+                            <option value="10">書籍</option>
+                        </optgroup>
                     </select>
                     </div>
                     <div class="col-md-12">

@@ -38,6 +38,9 @@ class CheckFormData{
         if($data->borrowed ===9){
             $borrowed ="9号機+アダプタ+バッテリー";
         }
+        if($data->borrowed ==10){
+            $borrowed ="書籍";
+        }
 
         return $borrowed;
     }

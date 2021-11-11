@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container">
+<div class="container col-md-10">
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
@@ -27,9 +27,11 @@
                             <th scope="col">貸出物</th>
                             <th scope="col">貸出日</th>
                             <th scope="col">返却日</th>
-                            <th scope="col">状態</th>
+                            <th scope="col">貸出状態</th>
                             <th scope="col">備考</th>
+                            <th scope="col">承認者</th>
                             <th scope="col">承認状態</th>
+                            
                             <th scope="col"></th>
                             <th scope="col"></th>
                             <th scope="col"></th>
@@ -39,12 +41,13 @@
                         @foreach($equipments as $equipment)    
                         <tr>
                         <th>{{$equipment->id}}</th>
-                        <td>{{$equipment->name}}</td>                   
+                        <td>{{$equipment->equipment_name}}</td>                   
                         <td>{{$borrowarr[$loop->iteration -1]}}</td>                   
                         <td>{{$equipment->checkout}}</td>
                         <td>{{$equipment->returned}}</td>                 
                         <td><span class="badge badge-success">{{$confirmarr[$loop->iteration -1]}}</span></td>
                         <td>{{$equipment->description}}</td>
+                        <td>{{$equipment->authorizer_name}}</td>
                         <td>
                         @if($equipment->accepted===1)
                             <span style="color:green">承認済</span>
