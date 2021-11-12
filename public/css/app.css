@@ -3667,6 +3667,10 @@ input[type=button].btn-block {
   justify-content: flex-start;
 }
 
+.btn-toolbar-right{
+  margin-left:2em;
+}
+
 .btn-toolbar .input-group {
   width: auto;
 }

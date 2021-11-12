@@ -14,9 +14,16 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <form method="GET" action="{{route('equipment.create')}}">       
-                    <button type="submit"class="btn btn-primary">新規登録</button>
-                    </form>
+                    <div class="btn-toolbar">
+                        <form method="GET" action="{{route('equipment.create')}}">       
+                        <button type="submit"class="btn btn-primary">新規登録画面</button>
+                        </form>
+                        <div class="btn-toolbar-right">
+                        <form method="GET" action="{{route('authorizer.index')}}">   
+                        <button type="submit"class="btn btn-primary">承認者管理画面</button>
+                        </form>
+                        </div>
+                    </div>
 
                         <table class="table table-striped">
                         <thead>

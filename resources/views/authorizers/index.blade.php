@@ -14,13 +14,20 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                   
                     <form method="POST" action="{{route('authorizer.store')}}">
                     @csrf
                     <label>氏名</label>
                     <input type="text" class="form-control col-md-6"name="name"required>
-                    </div>       
+                    <div class="btn-toolbar">
                     <button type="submit"class="btn btn-primary">新規登録</button>
                     </form>
+                    <div class="btn-toolbar-right">
+                    <form method="GET" action="{{route('equipment.index')}}">   
+                    <button type="submit"class="btn btn-primary">戻る</button>
+                    </form>
+                    </div>
+                    </div>
 
                         <table class="table table-striped">
                         <thead>
