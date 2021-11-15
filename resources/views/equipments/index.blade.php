@@ -52,7 +52,13 @@
                         <td>{{$borrowarr[$loop->iteration -1]}}</td>                   
                         <td>{{$equipment->checkout}}</td>
                         <td>{{$equipment->returned}}</td>                 
-                        <td><span class="badge badge-success">{{$confirmarr[$loop->iteration -1]}}</span></td>
+                        <td>
+                            @if($confirmarr[$loop->iteration -1]==='返却済み')
+                            <span class="badge badge-success">{{$confirmarr[$loop->iteration -1]}}</span>
+                            @else
+                            <span class="badge badge-danger">{{$confirmarr[$loop->iteration -1]}}</span>
+                            @endif
+                        </td>
                         <td>{{$equipment->description}}</td>
                         <td>{{$equipment->authorizer_name}}</td>
                         <td>
