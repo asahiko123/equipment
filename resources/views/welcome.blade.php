@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    貸出管理アプリ
+                    備品貸出管理アプリ
                 </div>
 
                 <!-- <div class="links">
