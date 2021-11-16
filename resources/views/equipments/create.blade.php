@@ -45,7 +45,10 @@
                             <option value="15">15号機+アダプタ+バッテリー</option>
                         </optgroup>
                         <optgroup label="書籍">
-                            <option value="10">書籍</option>
+                            <option value="16">書籍</option>
+                        </optgroup>
+                        <optgroup label="傘">
+                            <option value="17">傘</option>
                         </optgroup>
                     </select>
                     </div>

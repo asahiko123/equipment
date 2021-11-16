@@ -39,7 +39,35 @@ class CheckFormData{
             $borrowed ="9号機+アダプタ+バッテリー";
         }
         if($data->borrowed ==10){
+            $borrowed ="10号機+アダプタ+バッテリー";
+        }
+
+        if($data->borrowed ==11){
+            $borrowed ="11号機+アダプタ+バッテリー";
+        }
+
+        if($data->borrowed ==12){
+            $borrowed ="12号機+アダプタ+バッテリー";
+        }
+
+        if($data->borrowed ==13){
+            $borrowed ="13号機+アダプタ+バッテリー";
+        }
+
+        if($data->borrowed ==14){
+            $borrowed ="14号機+アダプタ+バッテリー";
+        }
+
+        if($data->borrowed ==15){
+            $borrowed ="15号機+アダプタ+バッテリー";
+        }
+
+        if($data->borrowed ==16){
             $borrowed ="書籍";
+        }
+
+        if($data->borrowed ==17){
+            $borrowed ="傘";
         }
 
         return $borrowed;

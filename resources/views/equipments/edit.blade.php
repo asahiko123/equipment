@@ -38,7 +38,7 @@
                     備考
                     <textarea name="description"></textarea> -->
                     
-                    <input type="radio" name="confirmed"value="0">貸出中
+                    <input type="radio" name="confirmed"value="0" required>貸出中
                     <input type="radio" name="confirmed" value="1">返却済
                   
                     <input class="btn btn-info" type="submit" value="更新する">  
