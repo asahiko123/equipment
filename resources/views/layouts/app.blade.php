@@ -20,17 +20,11 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <!-- ウェブアプリマニフェストの読み込み -->
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="/manifest.json">
 </head>
     <!-- ServiceWorkerの登録 -->
 <script>
     
-    if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js')
-      .then((reg) => {
-        console.log('Service worker registered.', reg);
-      });
-    }
     function check(){
         var result =window.confirm('本当に削除しますか?');
         if(result){

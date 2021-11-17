@@ -10,7 +10,7 @@
         "sizes":"512x512",
         "type": "image/png"
       }],
-    "start_url": "/index.blade.php",
+    "start_url": "/equipment/index",
     "display": "standalone",
     "background_color": "#FFFFFF",
     "theme_color": "#FFFFFF"
