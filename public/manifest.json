@@ -10,8 +10,9 @@
         "sizes":"512x512",
         "type": "image/png"
       }],
-    "start_url": "/equipment/index",
+    "start_url": "/",
     "display": "standalone",
+    "orientation": "portrait-primary",
     "background_color": "#FFFFFF",
     "theme_color": "#FFFFFF"
   }
