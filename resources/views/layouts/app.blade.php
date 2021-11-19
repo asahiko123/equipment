@@ -21,6 +21,9 @@
 
     <!-- ウェブアプリマニフェストの読み込み -->
     <link rel="manifest" href="/manifest.json" crossorigin="use-credentials">
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+
 </head>
     <!-- ServiceWorkerの登録 -->
 <script>
