@@ -19,7 +19,7 @@ class EquipmentController extends Controller
     {   //エロクワント
         // $equipments =EquipmentForm::all();
         // dd($equipments);
-     
+
         $equipments =DB::table('equipment_forms')
         ->select('equipment_forms.id','equipment_forms.name as equipment_name','borrowed','checkout','returned','confirmed','description','accepted','authorizer_id','authorizers.name as authorizer_name')
         ->leftjoin('authorizers','equipment_forms.authorizer_id','=','authorizers.id')
@@ -31,16 +31,16 @@ class EquipmentController extends Controller
         $confirmarr =array();
 
         foreach($equipments as $value){
-            
+
             $borrowed =CheckFormData::CheckBorrowed($value);
             $confirmed=CheckFormData::CheckConfirmed($value);
-            
+
             $borrowarr[] =$borrowed;
             $confirmarr[]=$confirmed;
         }
         // var_dump($confirmarr);
         // var_dump($borrowarr);
-        
+
         return view('equipments.index',compact('equipments','borrowarr','confirmarr'));
     }
 
@@ -62,6 +62,7 @@ class EquipmentController extends Controller
      */
     public function store(Request $request)
     {
+
         $equipment = new EquipmentForm;
 
         $equipment->name = $request->input('name');
@@ -70,7 +71,7 @@ class EquipmentController extends Controller
         $equipment->returned = $request->input('returned');
         $equipment->confirmed= $request->input('confirmed');
         $equipment->description=$request->input('description');
-        
+
 
         $equipment->save();
 
@@ -118,7 +119,7 @@ class EquipmentController extends Controller
         // $equipment->checkout = $request->input('checkout');
         // $equipment->returned = $request->input('returned');
         // $equipment->description=$request->input('description');
-        $equipment->confirmed= $request->input('confirmed');   
+        $equipment->confirmed= $request->input('confirmed');
 
         $equipment->save();
 
@@ -143,7 +144,7 @@ class EquipmentController extends Controller
 
             $equipment =EquipmentForm::find($id);
             $equipment->accepted =$request->accepted;
-            
+
             $equipment->save();
 
             $authorizer =AuthorizerForm::all();
