@@ -14,7 +14,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                   
+
                     <form method="POST" action="{{route('authorizer.store')}}">
                     @csrf
                     <label>氏名</label>
@@ -23,8 +23,8 @@
                     <button type="submit"class="btn btn-primary">新規登録</button>
                     </form>
                     <div class="btn-toolbar-right">
-                    <form method="GET" action="{{route('equipment.index')}}">   
-                    <button type="submit"class="btn btn-primary">戻る</button>
+                    <form method="GET" action="{{route('equipment.index')}}">
+                    <button type="submit"class="btn btn-success">戻る</button>
                     </form>
                     </div>
                     </div>
@@ -32,20 +32,20 @@
                         <table class="table table-striped">
                         <thead>
                             <tr>
-                            
+
                             <th scope="col">id</th>
                             <th scope="col">氏名</th>
                             <th></th>
                             </tr>
                         </thead>
                         <tbody>
-                        @foreach($authorizers as $authorize)    
+                        @foreach($authorizers as $authorize)
                         <tr>
                         <th>{{$authorize->id}}</th>
-                        <td>{{$authorize->name}}</td>                   
-                        
+                        <td>{{$authorize->name}}</td>
+
                         @can('admin-higher')
-           
+
                         <td>
                             <form method="POST" action="{{route('authorizer.destroy',['id'=> $authorize->id])}}" onsubmit="return check()">
                             @csrf
