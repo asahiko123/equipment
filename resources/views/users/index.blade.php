@@ -24,7 +24,7 @@
                     </form>
                     <div class="btn-toolbar-right">
                         <form method="GET" action="{{route('user.index')}}">   
-                            <button type="submit"class="btn btn-primary">戻る</button>
+                            <button type="submit"class="btn btn-success">戻る</button>
                         </form>
                     </div>
                     </div>

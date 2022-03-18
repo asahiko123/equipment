@@ -42,7 +42,12 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = new UserForm;
+        $user->name = $request->input('name');
+
+        $user->save();
+
+        return redirect('user/index');
     }
 
     /**
@@ -87,6 +92,9 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = UserForm::find($id);
+        $user->delete();
+
+        return redirect('user/index');
     }
 }
