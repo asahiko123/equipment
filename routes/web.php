@@ -40,6 +40,13 @@ Route::group(['prefix'=>'authorizer','middleware'=>['auth','can:admin-higher']],
     Route::post('store','AuthorizerController@store')->name('authorizer.store');
     Route::post('destroy/{id}','AuthorizerController@destroy')->name('authorizer.destroy');
 });
+
+Route::group(['prefix'=>'user','middleware'=>['auth','can:admin-higher']],function(){
+    Route::match(['get','post'],'index','UserController@index')->name('user.index');
+    Route::post('create','UserController@create')->name('user.create');
+    Route::post('store','UserController@store')->name('user.store');
+    Route::post('destroy/{id}','UserController@destroy')->name('user.destroy');
+});
 //開発者以上
 Route::group(['prefix'=>'equipment','middleware'=>['auth','can:system-only']],function(){
    

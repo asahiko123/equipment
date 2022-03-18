@@ -16,12 +16,17 @@
                     @endif
                     <div class="btn-toolbar">
                         <form method="GET" action="{{route('equipment.create')}}">
-                        <button type="submit"class="btn btn-primary">新規登録画面</button>
+                            <button type="submit"class="btn btn-primary">新規登録画面</button>
                         </form>
                         <div class="btn-toolbar-right">
-                        <form method="GET" action="{{route('authorizer.index')}}">
-                        <button type="submit"class="btn btn-primary">承認者管理画面</button>
-                        </form>
+                            <form method="GET" action="{{route('authorizer.index')}}">
+                                <button type="submit"class="btn btn-primary">承認者管理画面</button>
+                            </form>
+                        </div>
+                        <div class="btn-toolbar-right">
+                            <form method="GET" action="{{route('user.index')}}">
+                                <button type="submit"class="btn btn-primary">利用者登録画面</button>
+                            </form>
                         </div>
                     </div>
                     <div class="table-responsive">
