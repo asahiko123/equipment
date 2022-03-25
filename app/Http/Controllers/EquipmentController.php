@@ -7,6 +7,7 @@ use App\Models\EquipmentForm;
 use App\Models\AuthorizerForm;
 use Illuminate\Support\Facades\DB;
 use App\Services\CheckFormData;
+use App\Models\UserForm;
 
 class EquipmentController extends Controller
 {
@@ -21,8 +22,9 @@ class EquipmentController extends Controller
         // dd($equipments);
 
         $equipments =DB::table('equipment_forms')
-        ->select('equipment_forms.id','equipment_forms.name as equipment_name','borrowed','checkout','returned','confirmed','description','accepted','authorizer_id','authorizers.name as authorizer_name')
+        ->select('equipment_forms.id','facility_user_id','facility_users.name as facility_user_name','borrowed','checkout','returned','confirmed','description','accepted','authorizer_id','authorizers.name as authorizer_name')
         ->leftjoin('authorizers','equipment_forms.authorizer_id','=','authorizers.id')
+        ->leftjoin('facility_users','equipment_forms.facility_user_id','=','facility_users.id')
         ->orderBy('id','desc')
         ->paginate(10);
 
@@ -49,9 +51,11 @@ class EquipmentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(UserForm $userForm)
     {
-        return view('equipments.create');
+        $facility_user = $userForm->getFacilityUser();
+
+        return view('equipments.create',compact('facility_user'));
     }
 
     /**
@@ -65,7 +69,7 @@ class EquipmentController extends Controller
 
         $equipment = new EquipmentForm;
 
-        $equipment->name = $request->input('name');
+        $equipment->facility_user_id = $request->input('facility_user_id');
         $equipment->borrowed = $request->input('borrowed');
         $equipment->checkout = $request->input('checkout');
         $equipment->returned = $request->input('returned');

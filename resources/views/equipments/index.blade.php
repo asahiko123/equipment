@@ -53,7 +53,7 @@
                         @foreach($equipments as $equipment)
                         <tr>
                         <th>{{$equipment->id}}</th>
-                        <td>{{$equipment->equipment_name}}</td>
+                        <td>{{$equipment->facility_user_name}}</td>
                         <td>{{$borrowarr[$loop->iteration -1]}}</td>
                         <td>{{$equipment->checkout}}</td>
                         <td>{{$equipment->returned}}</td>
