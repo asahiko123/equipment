@@ -48,12 +48,16 @@
                             <option value="13">13号機+アダプタ+バッテリー</option>
                             <option value="14">14号機+アダプタ+バッテリー</option>
                             <option value="15">15号機+アダプタ+バッテリー</option>
+                            <option value="16">16号機+アダプタ+バッテリー</option>
+                            <option value="17">17号機+アダプタ+バッテリー</option>
+                            <option value="18">18号機+アダプタ+バッテリー</option>
+                            <option value="19">19号機+アダプタ+バッテリー</option>
                         </optgroup>
                         <optgroup label="書籍">
-                            <option value="16">書籍</option>
+                            <option value="20">書籍</option>
                         </optgroup>
                         <optgroup label="傘">
-                            <option value="17">傘</option>
+                            <option value="21">傘</option>
                         </optgroup>
                     </select>
                     </div>

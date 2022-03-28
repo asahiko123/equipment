@@ -8,23 +8,23 @@ class CheckFormData{
 
         if($data->borrowed ===1){
             $borrowed ="1号機+アダプタ+バッテリー";
-            
+
         }
         if($data->borrowed ===2){
             $borrowed ="2号機+アダプタ+バッテリー";
-            
+
         }
         if($data->borrowed ===3){
             $borrowed ="3号機+アダプタ+バッテリー";
-            
+
         }
         if($data->borrowed ===4){
             $borrowed ="4号機+アダプタ+バッテリー";
-            
+
         }
         if($data->borrowed ===5){
             $borrowed ="5号機+アダプタ+バッテリー";
-           
+
         }
         if($data->borrowed ===6){
             $borrowed ="6号機+アダプタ+バッテリー";
@@ -61,12 +61,24 @@ class CheckFormData{
         if($data->borrowed ==15){
             $borrowed ="15号機+アダプタ+バッテリー";
         }
-
         if($data->borrowed ==16){
+            $borrowed ="16号機+アダプタ+バッテリー";
+        }
+        if($data->borrowed ==17){
+            $borrowed ="17号機+アダプタ+バッテリー";
+        }
+        if($data->borrowed ==18){
+            $borrowed ="18号機+アダプタ+バッテリー";
+        }
+        if($data->borrowed ==19){
+            $borrowed ="19号機+アダプタ+バッテリー";
+        }
+
+        if($data->borrowed ==20){
             $borrowed ="書籍";
         }
 
-        if($data->borrowed ==17){
+        if($data->borrowed ==21){
             $borrowed ="傘";
         }
 
@@ -74,7 +86,7 @@ class CheckFormData{
     }
 
     public static function CheckConfirmed($data){
-        
+
         if($data->confirmed ===0){
             $confirmed ="貸出中";
         }
