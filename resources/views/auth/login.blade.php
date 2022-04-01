@@ -39,9 +39,9 @@
                             </div>
                         </div>
 
-                        <div class="text-left">
+                        {{-- <div class="text-left">
                             <a href="{{ route('password.request') }}" class="card-text">パスワードを忘れた方</a>
-                        </div>
+                        </div> --}}
 
 
                         <div class="form-group row mb-0">
