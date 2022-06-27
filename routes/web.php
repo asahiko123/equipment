@@ -32,6 +32,15 @@ Route::group(['prefix'=>'equipment','middleware'=>['auth','can:admin-higher']],f
     Route::post('destroy/{id}','EquipmentController@destroy')->name('equipment.destroy');
     Route::post('accept/{id}','EquipmentController@accept')->name('equipment.accept');
     Route::post('select/{id}','EquipmentController@select')->name('equipment.select');
+    
+});
+
+Route::group(['prefix' =>'lending','middleware' =>['auth','can:admin-higher']],function(){
+    Route::get('index','LendingController@index')->name('lending.index');
+    Route::post('store','LendingController@store')->name('lending.store');
+    Route::get('edit/{id}','LendingController@edit')->name('lending.edit');
+    Route::post('destroy/{id}','LendingController@destroy')->name('lending.destroy');
+    Route::post('update/{id}','LendingController@update')->name('lending.update');
 });
 
 Route::group(['prefix'=>'authorizer','middleware'=>['auth','can:admin-higher']],function(){
