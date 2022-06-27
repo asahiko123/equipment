@@ -18,61 +18,80 @@
                     @csrf
                     <div class="d-grid gap-3 col-lg-5 py-2">
                         <div class="col-md-12">
-                        氏名
-                        <input type="text" name="name">
-                        </div>
-                        <div class="col-md-12">
-                        貸出物
-                        <select name="borrowed">
-                            <option value=""></option>
-                            <option value="1">1号機+アダプタ+バッテリー</option>
-                            <option value="2">2号機+アダプタ+バッテリー</option>
-                            <option value="3">3号機+アダプタ+バッテリー</option>
-                            <option value="4">4号機+アダプタ+バッテリー</option>
-                            <option value="5">5号機+アダプタ+バッテリー</option>
-                            <option value="6">6号機+アダプタ+バッテリー</option>
-                            <option value="7">7号機+アダプタ+バッテリー</option>
-                            <option value="8">8号機+アダプタ+バッテリー</option>
-                            <option value="9">9号機+アダプタ+バッテリー</option>
-                        </select>
+                            <div class="col-md-12">
+                                <label for="">利用者</label>
+                                <select class="form-select form-control mb-3" name="facility_user_id" required>
+                                        <option selected>選択してください</option>
+                                        @foreach($facility_user as $user)
+                                            <option value="{{$user->id}}">{{$user->name}}</option>
+                                        @endforeach
+                                </select>
+                            </div>
+                            
+                            <div class="col-md-12">
+                            <label for="">貸出物</label>
+                            <select class="form-select form-control mb-3" name="borrowed" required>
+                                <option selected>選択してください</option>
+                                <optgroup label ="iPad">
+                                    <option value="1">1号機+アダプタ+バッテリー</option>
+                                    <option value="2">2号機+アダプタ+バッテリー</option>
+                                    <option value="3">3号機+アダプタ+バッテリー</option>
+                                    <option value="4">4号機+アダプタ+バッテリー</option>
+                                    <option value="5">5号機+アダプタ+バッテリー</option>
+                                    <option value="6">6号機+アダプタ+バッテリー</option>
+                                </optgroup>
+                                <optgroup label ="パソコン">
+                                    <option value="7">7号機+アダプタ+バッテリー</option>
+                                    <option value="8">8号機+アダプタ+バッテリー</option>
+                                    <option value="9">9号機+アダプタ+バッテリー</option>
+                                    <option value="10">10号機+アダプタ+バッテリー</option>
+                                    <option value="11">11号機+アダプタ+バッテリー</option>
+                                    <option value="12">12号機+アダプタ+バッテリー</option>
+                                    <option value="13">13号機+アダプタ+バッテリー</option>
+                                    <option value="14">14号機+アダプタ+バッテリー</option>
+                                    <option value="15">15号機+アダプタ+バッテリー</option>
+                                    <option value="16">16号機+アダプタ+バッテリー</option>
+                                    <option value="17">17号機+アダプタ+バッテリー</option>
+                                    <option value="18">18号機+アダプタ+バッテリー</option>
+                                    <option value="19">19号機+アダプタ+バッテリー</option>
+                                </optgroup>
+                                <optgroup label="書籍">
+                                    <option value="20">書籍</option>
+                                </optgroup>
+                                <optgroup label="傘">
+                                    <option value="21">傘</option>
+                                </optgroup>
+                            </select>
 
-                        </div>
+                            </div>
 
-                        <div class="col-md-12">
+                            <div class="col-md-12">
+                                <label>貸出日</label>
+                                <input type="date" class="form-control mb-3" name="checkout"required>
+                            </div>
+                            <div class="col-md-12">
+                                <label>返却日</label>
+                                <input type="date" class="form-control mb-3"name="returned"required>
+                            </div>
 
-                        <label>貸出日</label>
-                        <input type="date" name="checkout">
+                            <div class="col-md-12">
+                            <label>備考</label>
+                            <textarea name="description" class="form-control col-md-12 mb-3"></textarea>
+                            </div>
+                            <div class="col-md-12">
+                                <label>状態</label>
+                                <div class="form-check mb-3">
+                                    <input type="radio" class="form-check-input" name="confirmed"value="0">
+                                    <label class="form-check-label">貸出中</label>
+                                </div>
+                                <div class="form-check mb-3">
+                                    <input type="radio" class="form-check-input" name="confirmed" value="1">
+                                    <label class="form-check-label">返却済</label>
+                                </div>
+                            </div>
 
-                        </div>
-
-                        <div class="col-md-12">
-
-                        <label>返却日</label>
-                        <input type="date" name="returned">
-
-                        </div>
-
-                        <div class="col-md-12">
-
-                        <label>備考</label>
-                        <textarea name="description"></textarea>
-
-                        </div>
-
-                        <div class="form-check mb-3">
-                            <label for="">貸出中</label>
-                        <input type="radio" name="confirmed"value="0" required>
-                        </div>
-
-                        <div class="form-check mb-3">
-                            <label for="">返却済</label>
-                        <input type="radio" name="confirmed" value="1">
-                        </div>
-
-                        <div class="col-md-12">
-
-                        <input class="btn btn-info" type="submit" value="更新する">
-                        <a class="btn btn-success" href="{{route('equipment.index')}}">戻る</a>
+                            <input class="btn btn-info" type="submit" value="更新する">
+                            <a class="btn btn-success" href="{{route('equipment.index')}}">戻る</a>
 
                         </div>
                     </div>

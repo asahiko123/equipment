@@ -100,11 +100,12 @@ class EquipmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id,UserForm $userForm)
     {
         $equipment =EquipmentForm::find($id);
+        $facility_user = $userForm->getFacilityUser();
 
-        return view('equipments.edit',compact('equipment'));
+        return view('equipments.edit',compact('equipment','facility_user'));
     }
 
     /**
@@ -118,11 +119,11 @@ class EquipmentController extends Controller
     {
         $equipment =EquipmentForm::find($id);
 
-        // $equipment->name = $request->input('name');
-        // $equipment->borrowed = $request->input('borrowed');
-        // $equipment->checkout = $request->input('checkout');
-        // $equipment->returned = $request->input('returned');
-        // $equipment->description=$request->input('description');
+        $equipment->facility_user_id = $request->input('facility_user_id');
+        $equipment->borrowed = $request->input('borrowed');
+        $equipment->checkout = $request->input('checkout');
+        $equipment->returned = $request->input('returned');
+        $equipment->description=$request->input('description');
         $equipment->confirmed= $request->input('confirmed');
 
         $equipment->save();
