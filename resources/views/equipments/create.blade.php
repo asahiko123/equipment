@@ -17,15 +17,15 @@
                     <form method="POST" action="{{route('equipment.store')}}">
                     @csrf
                     <div class="d-grid gap-3 col-lg-5 py-2">
-                    <div class="col-md-12">
-                    <label>氏名</label>
-                    <select class="form-select form-control mb-3" name="facility_user_id" required>
-                        <option selected>選択してください</option>
-                        @foreach($facility_user as $user)
-                            <option value="{{$user->id}}">{{$user->name}}</option>
-                        @endforeach
-                    </select>
-                    </div>
+                        <div class="col-md-12">
+                        <label>氏名</label>
+                        <select class="form-select form-control mb-3" name="facility_user_id" required>
+                            <option selected>選択してください</option>
+                            @foreach($facility_user as $user)
+                                <option value="{{$user->id}}">{{$user->name}}</option>
+                            @endforeach
+                        </select>
+                        </div>
                     <div class="col-md-12">
                     <label>貸出物</label>
                     <select class="form-select form-control mb-3" name="borrowed" required>
