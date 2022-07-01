@@ -8,6 +8,7 @@ use App\Models\AuthorizerForm;
 use Illuminate\Support\Facades\DB;
 use App\Services\CheckFormData;
 use App\Models\UserForm;
+use App\Models\Lending;
 
 class EquipmentController extends Controller
 {
@@ -51,11 +52,13 @@ class EquipmentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(UserForm $userForm)
+    public function create(UserForm $userForm,Lending $lending)
     {
         $facility_user = $userForm->getFacilityUser();
+        $lendings = $lending->getLendingGroupByOptgroup();
+        // dd($lendings);
 
-        return view('equipments.create',compact('facility_user'));
+        return view('equipments.create',compact('facility_user','lendings'));
     }
 
     /**

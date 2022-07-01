@@ -13,7 +13,7 @@ class LendingController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Lending $lending)
     {
         $items = DB::table('lendings')
                 ->select(
@@ -27,8 +27,11 @@ class LendingController extends Controller
                 )
                 ->paginate(10);
 
+        $optgroup = $lending->getOptGroupName();
+        // dd($optgroup);
 
-        return view('lending.index',compact('items'));
+
+        return view('lending.index',compact('items','optgroup'));
     }
 
     /**

@@ -25,7 +25,7 @@ class ChangeFacilityUserIdTinyintToUnsignedBigIntegerOnEquipmentFormsTable exten
      */
     public function down()
     {
-        Schema::table('unsigned_big_integer_on_equipment_forms', function (Blueprint $table) {
+        Schema::table('equipment_forms', function (Blueprint $table) {
             $table->tinyInteger('facility_user_id')->change();
         });
     }

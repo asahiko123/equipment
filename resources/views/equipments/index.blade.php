@@ -19,9 +19,7 @@
                         <form method="GET" action="{{route('equipment.create')}}">
                             <button type="submit"class="btn btn-primary lg">新規登録画面</button>
                         </form>
-                        <form method="GET" action="{{route('lending.index')}}">
-                            <button type="submit"class="btn btn-primary">貸出物管理画面</button>
-                        </form>
+                        
                         <div class="btn-toolbar-right">
                             <form method="GET" action="{{route('authorizer.index')}}">
                                 <button type="submit"class="btn btn-primary">承認者管理画面</button>
@@ -34,8 +32,8 @@
                         </div>
 
                         <div class="btn-toolbar-right">
-                            <form method="GET" action="{{route('user.index')}}">
-                                <button type="submit"class="btn btn-primary">備品登録画面</button>
+                            <form method="GET" action="{{route('lending.index')}}">
+                                <button type="submit"class="btn btn-primary">貸出物登録画面</button>
                             </form>
                         </div>
                     </div>

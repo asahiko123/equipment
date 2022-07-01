@@ -23,14 +23,7 @@
 
                     <div class="col-md-12">
                         <label>貸出物グループ</label>
-                        <select class="form-select form-control mb-3" name="optgroup_id" required>
-                            <option selected>選択してください</option>
-                                <option value="1">iPad</option>
-                                <option value="2">パソコン</option>
-                                <option value="3">書籍</option>
-                                <option value="4">傘</option>
-                                <option value="5">その他</option>
-                        </select>
+                        <input type="text" class="form-control mb-3" name="optgroup_id"required>
                     </div>
                     <div class="col-md-12">
                         <input class="btn btn-info" type="submit" value="登録する">
@@ -59,7 +52,8 @@
                         <tr>
                         <th>{{$item->id}}</th>
                         <td>{{$item->name}}</td>
-                        <td>
+                        <td>{{$item->optgroup_id}}</td>
+                        {{-- <td>
                             @if($item->optgroup_id === 1)
                             <span>iPad</span>
                             @elseif($item->optgroup_id === 2)
@@ -71,7 +65,7 @@
                             @elseif($item->optgroup_id === 5)
                                 <span>その他</span>
                             @endif
-                        </td>
+                        </td> --}}
                         
                         
                         <td><button class="btn btn-primary text-nowrap" onclick="location.href='{{ route('lending.edit',['id'=> $item->id])}}'">編集</button></td>

@@ -16,7 +16,7 @@ class CreateLendingTable extends Migration
         Schema::create('lendings', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->bigInteger('optgroup_id');
+            $table->string('optgroup_id');
             $table->timestamps();
         });
     }
