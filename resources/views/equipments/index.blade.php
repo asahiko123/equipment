@@ -14,9 +14,10 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <div class="btn-toolbar">
+
+                    <div class="btn-toolbar d-flex justify-content-around flex-wrap p-2">
                         <form method="GET" action="{{route('equipment.create')}}">
-                            <button type="submit"class="btn btn-primary">新規登録画面</button>
+                            <button type="submit"class="btn btn-primary lg">新規登録画面</button>
                         </form>
                         <form method="GET" action="{{route('lending.index')}}">
                             <button type="submit"class="btn btn-primary">貸出物管理画面</button>
@@ -31,7 +32,14 @@
                                 <button type="submit"class="btn btn-primary">利用者登録画面</button>
                             </form>
                         </div>
+
+                        <div class="btn-toolbar-right">
+                            <form method="GET" action="{{route('user.index')}}">
+                                <button type="submit"class="btn btn-primary">備品登録画面</button>
+                            </form>
+                        </div>
                     </div>
+
                     <div class="table-responsive">
                         <table class="table table-striped">
                         <thead>
