@@ -34,6 +34,10 @@
                         </form>
                     </div>
 
+                    <form method="GET" action="{{route('equipment.create')}}">
+                        <button type="submit"class="btn btn-primary lg">新規登録画面</button>
+                    </form>
+
                     @elsecan('user-higher')
                         <form method="GET" action="{{route('equipment.create')}}">
                             <button type="submit"class="btn btn-primary lg">新規登録画面</button>
