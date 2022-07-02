@@ -16,26 +16,30 @@
                     @endif
 
                     <div class="btn-toolbar d-flex justify-content-around flex-wrap p-2">
+                    @can('admin-higher')
+                    <div class="btn-toolbar-right">
+                        <form method="GET" action="{{route('authorizer.index')}}">
+                            <button type="submit"class="btn btn-primary">承認者管理画面</button>
+                        </form>
+                    </div>
+                    <div class="btn-toolbar-right">
+                        <form method="GET" action="{{route('user.index')}}">
+                            <button type="submit"class="btn btn-primary">利用者登録画面</button>
+                        </form>
+                    </div>
+
+                    <div class="btn-toolbar-right">
+                        <form method="GET" action="{{route('lending.index')}}">
+                            <button type="submit"class="btn btn-primary">貸出物登録画面</button>
+                        </form>
+                    </div>
+
+                    @elsecan('user-higher')
                         <form method="GET" action="{{route('equipment.create')}}">
                             <button type="submit"class="btn btn-primary lg">新規登録画面</button>
                         </form>
-                        
-                        <div class="btn-toolbar-right">
-                            <form method="GET" action="{{route('authorizer.index')}}">
-                                <button type="submit"class="btn btn-primary">承認者管理画面</button>
-                            </form>
-                        </div>
-                        <div class="btn-toolbar-right">
-                            <form method="GET" action="{{route('user.index')}}">
-                                <button type="submit"class="btn btn-primary">利用者登録画面</button>
-                            </form>
-                        </div>
 
-                        <div class="btn-toolbar-right">
-                            <form method="GET" action="{{route('lending.index')}}">
-                                <button type="submit"class="btn btn-primary">貸出物登録画面</button>
-                            </form>
-                        </div>
+                    @endcan
                     </div>
 
                     <div class="table-responsive">
