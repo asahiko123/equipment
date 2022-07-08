@@ -15,28 +15,33 @@
                         </div>
                     @endif
 
-                    <div class="btn-toolbar d-flex justify-content-around flex-wrap p-2">
+                    <div class="btn-toolbar d-flex justify-content-around flex-wrap pb-3">
                     @can('admin-higher')
                     <div class="btn-toolbar-right">
-                        <form method="GET" action="{{route('authorizer.index')}}">
-                            <button type="submit"class="btn btn-primary">承認者管理画面</button>
+                        <form method="GET" action="{{route('equipment.create')}}">
+                            <button type="submit"class="btn btn-primary lg"><i class="fa-solid fa-address-book mr-2"></i>新規登録画面</button>
                         </form>
                     </div>
+
+                    <div class="btn-toolbar-right">
+                        <form method="GET" action="{{route('authorizer.index')}}">
+                            <button type="submit"class="btn btn-primary"><i class="fa-solid fa-book-open-reader mr-2"></i>承認者管理画面</button>
+                        </form>
+                    </div>
+
                     <div class="btn-toolbar-right">
                         <form method="GET" action="{{route('user.index')}}">
-                            <button type="submit"class="btn btn-primary">利用者登録画面</button>
+                            <button type="submit"class="btn btn-primary"><i class="fa-solid fa-arrows-down-to-people mr-2"></i>利用者登録画面</button>
                         </form>
                     </div>
 
                     <div class="btn-toolbar-right">
                         <form method="GET" action="{{route('lending.index')}}">
-                            <button type="submit"class="btn btn-primary">貸出物登録画面</button>
+                            <button type="submit"class="btn btn-primary"><i class="fa-solid fa-book-bookmark mr-2"></i>貸出物登録画面</button>
                         </form>
                     </div>
 
-                    <form method="GET" action="{{route('equipment.create')}}">
-                        <button type="submit"class="btn btn-primary lg">新規登録画面</button>
-                    </form>
+
 
                     @elsecan('user-higher')
                         <form method="GET" action="{{route('equipment.create')}}">

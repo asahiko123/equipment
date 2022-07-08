@@ -24,6 +24,8 @@
     <!-- Apple Touch Icon -->
     <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
 
+    <link type="text/css" rel="stylesheet" href="{{ mix('css/app.css') }}">
+
 </head>
     <!-- ServiceWorkerの登録 -->
 <script>
