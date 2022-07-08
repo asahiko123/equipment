@@ -96,20 +96,20 @@
                         @endif
                         </td>
                         @can('admin-higher')
-                        <td><button class="btn btn-primary text-nowrap" onclick="location.href='{{ route('equipment.edit',['id'=> $equipment->id])}}'">編集</button></td>
+                        <td><button class="btn btn-primary text-nowrap" onclick="location.href='{{ route('equipment.edit',['id'=> $equipment->id])}}'"><i class="fa-solid fa-file-pen mr-2"></i>編集</button></td>
                         <td>
                             <form method="POST" action="{{route('equipment.destroy',['id'=> $equipment->id])}}" onsubmit="return check()">
                             @csrf
-                                <button type="submit"class="btn btn-danger text-nowrap">削除</button>
+                                <button type="submit"class="btn btn-danger text-nowrap"><i class="fa-solid fa-trash-can mr-2"></i>削除</button>
                             </form>
                         </td>
                         <td>
                             <form method="POST" action="{{route('equipment.accept',['id'=>$equipment->id])}}" onsubmit="return authcheck()">
                                 @csrf
                                 @if($equipment->accepted===0)
-                                <button type="submit"class="btn btn-success text-nowrap" name="accepted" value="1">承認</button>
+                                <button type="submit"class="btn btn-success text-nowrap" name="accepted" value="1"><i class="fa-solid fa-check mr-2"></i>承認</button>
                                 @else
-                                <button type="submit"class="btn btn-warning text-nowrap" name="accepted" value="0">承認取消</button>
+                                <button type="submit"class="btn btn-warning text-nowrap" name="accepted" value="0"><i class="fa-solid fa-arrow-rotate-left mr-2"></i>承認取消</button>
                                 @endif
                             </form>
                         </td>
