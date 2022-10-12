@@ -41,4 +41,8 @@ class LoginController extends Controller
     public function username(){
         return 'name';
     }
+
+    public function showLoginForm(){
+        return view('auth.login');
+    }
 }
