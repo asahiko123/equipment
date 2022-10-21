@@ -10,7 +10,8 @@ RUN apt-get update && apt-get install -y \
   unzip \
   git
 
-# RUN /bin/sh -c a2enmod rewrite
+RUN cd /etc/apache2/mods-enabled \
+    && ln -s ../mods-available/rewrite.load
 
 RUN docker-php-ext-install -j "$(nproc)" opcache && docker-php-ext-enable opcache
 
@@ -23,6 +24,6 @@ COPY --from=composer /usr/bin/composer /usr/bin/composer
 WORKDIR /var/www/html
 COPY . ./
 COPY --from=node-builder /app/public ./public
-COPY ./000-default.conf /etc/apache2/sites-available/000-default.conf
+# COPY ./000-default.conf /etc/apache2/sites-available/000-default.conf
 RUN composer install
 RUN chown -Rf www-data:www-data ./
