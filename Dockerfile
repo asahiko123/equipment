@@ -23,5 +23,6 @@ COPY --from=composer /usr/bin/composer /usr/bin/composer
 WORKDIR /var/www/html
 COPY . ./
 COPY --from=node-builder /app/public ./public
+COPY ./000-default.conf /etc/apache2/sites-available/000-default.conf
 RUN composer install
 RUN chown -Rf www-data:www-data ./
