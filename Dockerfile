@@ -5,7 +5,7 @@ COPY . ./app
 
 FROM php:8.0.18-apache
 
-RUN apt-get update && apt-get install -y && a2enmod rewrite\
+RUN apt-get update && apt-get install -y && a2enmod rewrite \
   zip \
   unzip \
   git
