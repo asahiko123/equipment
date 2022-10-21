@@ -5,10 +5,12 @@ COPY . ./app
 
 FROM php:8.0.18-apache
 
-RUN apt-get update && apt-get install -y && a2enmod rewrite \
+RUN apt-get update && apt-get install -y \
   zip \
   unzip \
   git
+
+RUN /bin/sh -c a2enmod rewrite
 
 RUN docker-php-ext-install -j "$(nproc)" opcache && docker-php-ext-enable opcache
 
