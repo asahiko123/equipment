@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y \
   unzip \
   git
 
-RUN /bin/sh -c a2enmod rewrite
+# RUN /bin/sh -c a2enmod rewrite
 
 RUN docker-php-ext-install -j "$(nproc)" opcache && docker-php-ext-enable opcache
 
