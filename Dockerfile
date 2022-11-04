@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
   zip \
   unzip \
   git \
-  && docker-php-ext-install pdo_mysql
+  && docker-php-ext-install pdo_mysql mysqli
 
 RUN cd /etc/apache2/mods-enabled \
     && ln -s ../mods-available/rewrite.load
