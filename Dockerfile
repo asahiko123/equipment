@@ -5,7 +5,7 @@ COPY . ./app
 
 FROM php:8.0.18-apache
 
-ADD php.ini /usr/local/etc/php/
+
 
 RUN apt-get update && apt-get install -y \
   zip \
