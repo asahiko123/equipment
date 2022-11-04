@@ -8,7 +8,8 @@ FROM php:8.0.18-apache
 RUN apt-get update && apt-get install -y \
   zip \
   unzip \
-  git
+  git \
+  docker-php-ext-install pdo_mysql
 
 RUN cd /etc/apache2/mods-enabled \
     && ln -s ../mods-available/rewrite.load
