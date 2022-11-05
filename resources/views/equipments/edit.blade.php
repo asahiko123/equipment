@@ -32,7 +32,14 @@
                             <label for="">貸出物</label>
                             <select class="form-select form-control mb-3" name="borrowed" required>
                                 <option selected>選択してください</option>
-                                <optgroup label ="iPad">
+                                @foreach($lendings as $key => $vals)
+                                    <optgroup label ="{{$key}}">
+                                        @foreach($vals as $val)
+                                            <option value="{{$val->id}}">{{$val->name}}</option>
+                                        @endforeach
+                                    </optgroup>
+                                @endforeach
+                                {{-- <optgroup label ="iPad">
                                     <option value="1">1号機+アダプタ+バッテリー</option>
                                     <option value="2">2号機+アダプタ+バッテリー</option>
                                     <option value="3">3号機+アダプタ+バッテリー</option>
@@ -60,7 +67,7 @@
                                 </optgroup>
                                 <optgroup label="傘">
                                     <option value="21">傘</option>
-                                </optgroup>
+                                </optgroup> --}}
                             </select>
 
                             </div>

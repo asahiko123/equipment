@@ -103,12 +103,13 @@ class EquipmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id,UserForm $userForm)
+    public function edit($id,UserForm $userForm,Lending $lending)
     {
         $equipment =EquipmentForm::find($id);
         $facility_user = $userForm->getFacilityUser();
+        $lendings = $lending->getLendingGroupByOptgroup();
 
-        return view('equipments.edit',compact('equipment','facility_user'));
+        return view('equipments.edit',compact('equipment','facility_user','lendings'));
     }
 
     /**
