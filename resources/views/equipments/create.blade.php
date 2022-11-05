@@ -30,10 +30,10 @@
                         <label>貸出物</label>
                         <select class="form-select form-control mb-3" name="borrowed" required>
                             <option selected>選択してください</option>
-                            @foreach($lendings as $lending =>$keys)
-                            <optgroup label ="{{$lending}}">
-                                @foreach($keys as $key)
-                                <option value="{{$key->id}}">{{$key->name}}</option>
+                            @foreach($lendings as $key =>$vals)
+                            <optgroup label ="{{$key}}">
+                                @foreach($vals as $val)
+                                <option value="{{$val->id}}">{{$val->name}}</option>
                                @endforeach
                             </optgroup>
                             
